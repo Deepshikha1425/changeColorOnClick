@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #id{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    button{
+        font-size:2rem;
+        color:white;
+        display: block;
+        cursor: pointer;
+        background-color: black;
+        width:50%;
+        margin:20px auto;
+        padding:1rem;
+    }
+</style>
+<body>
+    <button onclick="changeColor()">Click to change colors</button>
+    <div id="container"></div>
+    <script>
+        let n = +prompt("How many boxex you want to create???" , 100);
+        let container = document.getElementById('container');2
+        for(let i = 1; i <= n; i++){
+            let div =  document.createElement('div');
+            let  randomColor = '#' + Math.ceil(Math.random()*11117464).toString(16);
+            div.id = `div${i}`;
+            div.style.display = "inline-block";
+            div.style.width = 20 + "%";
+            div.style.height = 80 + "px";
+            div.style.background = randomColor;
+            div.innerHTML = randomColor;
+            container.append(div);
+        }
+    
+    function changeColor(){
+        for(i = 1; i <= n; i++){
+            let randomColor = '#' + Math.floor(Math.random()*956603).toString(16);
+            document.getElementById(`div${i}`).innerHTML = randomColor;
+            document.getElementById(`div${i}`).style.background = randomColor;
+        }
+    }
+    </script>
+</body>
+</html>
